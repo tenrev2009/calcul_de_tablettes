@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="number"] {
+    @apply px-4 py-2.5;
+  }
+  
+  /* Hide number input spinners */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+body {
+  @apply antialiased touch-manipulation overscroll-none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent pull-to-refresh on mobile */
+html, body {
+  overscroll-behavior-y: contain;
+}
